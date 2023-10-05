@@ -1,15 +1,10 @@
-Date: 10/2/2023 11:03:43 PM
-Prompt: Describe a place you'd like to visit.
-Location: rexburg
-Response: I would like to visit Nepal.
+Date: 10/4/2023 10:09:18 PM
+Prompt: What was the strongest emotion you felt?
+Location: Nepal
+Response: I cried
 
-Date: 10/2/2023 11:04:47 PM
-Prompt: Describe a place you'd like to visit.
-Location: idaho falls
-Response: Kathmandu
-
-Date: 10/2/2023 11:04:56 PM
-Prompt: What is your favorite memory?
+Date: 10/4/2023 10:09:40 PM
+Prompt: What was the strongest emotion you felt?
 Location: rexburg
-Response: Eating biryani
+Response: sad
 
