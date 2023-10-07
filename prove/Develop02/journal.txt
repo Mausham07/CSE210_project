@@ -1,10 +1,10 @@
-Date: 10/4/2023 10:09:18 PM
+Date: 10/6/2023 7:54:19 PM
+Prompt: What is your favorite memory?
+Location: resburg
+Response: My favorite memory is eating at Mongolian Grill.
+
+Date: 10/6/2023 7:54:32 PM
 Prompt: What was the strongest emotion you felt?
 Location: Nepal
-Response: I cried
-
-Date: 10/4/2023 10:09:40 PM
-Prompt: What was the strongest emotion you felt?
-Location: rexburg
-Response: sad
+Response: I cried for 2 hour.
 
