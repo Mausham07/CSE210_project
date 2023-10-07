@@ -22,6 +22,11 @@ class Journal {
         this._mb_username = _mb_username;
         _mb_entries = new List<Entry>();
         _mb_filename = "journal.txt";
+
+        // Check if the journal.txt file exists, if not create one
+        if(!File.Exists(_mb_filename)){
+            File.Create(_mb_filename).Close();
+        }
     }
 
     // Method to add a new entry to the journal
