@@ -9,9 +9,9 @@ class Word {
         _isHidden = false;
     }
 
-    public void Show() {
-        _isHidden = false;
-    }
+    // public void Show() {
+    //     _isHidden = false;
+    // }
 
     public void Hide() {
         _isHidden = true;
