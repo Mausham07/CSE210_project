@@ -17,7 +17,7 @@ class Program {
             Console.WriteLine("Press Enter to continue or type 'quit' to exit.");
             string input = Console.ReadLine();
 
-            if (input.Equals("quit", StringComparison.OrdinalIgnoreCase)) {
+            if (input=="quit") {
                 break;
             }
 
