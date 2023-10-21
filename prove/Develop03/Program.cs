@@ -27,6 +27,8 @@ class Program {
             scripture.HideRandomWord(); // Hide a random word in the scripture.
         }
 
+
+        // Requirement exceeds from here
         Console.WriteLine("Do you want to set reminders for daily scripture practice? (Yes/No)");
         string mb_remind = Console.ReadLine();
         if (mb_remind.ToLower() == "yes"){
