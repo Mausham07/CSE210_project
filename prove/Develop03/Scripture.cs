@@ -7,12 +7,14 @@ class Scripture {
     private List<Word> _mb_words;
     private string _mb_reference;
 
+    // Default constructor that initializes the class fields to default values.
     public Scripture(){
         _mb_text = "";
         _mb_words = new List<Word>();
         _mb_reference = "";
     }
 
+    // Constructor that takes scripture text and reference and initializes the class fields.
     public Scripture(string text, string reference) {
         _mb_text = text;
         _mb_reference = reference;
@@ -25,6 +27,7 @@ class Scripture {
         }
     }
 
+    // ToString method to display the scripture with hidden words.
     public string ToString() {
         List<string> displayWords = new List<string>();
         foreach (Word word in _mb_words) {
@@ -33,10 +36,12 @@ class Scripture {
         return $"{_mb_reference}: {string.Join(" ", displayWords)}";
     }
 
+    // Check if all words in the scripture are hidden.
     public bool AreAllWordsHidden() {
         return _mb_words.All(word => word.getHidden());
     }
 
+    // Hide a random word in the scripture.
     public void HideRandomWord() {
         Random random = new Random();
         int index;
