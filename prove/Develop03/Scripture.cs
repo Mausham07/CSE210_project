@@ -29,11 +29,11 @@ class Scripture {
 
     // ToString method to display the scripture with hidden words.
     public string ToString() {
-        List<string> displayWords = new List<string>();
+        List<string> mb_displayWords = new List<string>();
         foreach (Word word in _mb_words) {
-            displayWords.Add(word.hideOrShow());
+            mb_displayWords.Add(word.hideOrShow());
         }
-        return $"{_mb_reference}: {string.Join(" ", displayWords)}";
+        return $"{_mb_reference}: {string.Join(" ", mb_displayWords)}";
     }
 
     // Check if all words in the scripture are hidden.
