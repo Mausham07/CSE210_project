@@ -43,6 +43,7 @@ class Activity{
         Console.WriteLine(_mb_description);
         Console.Write("\nHow long, in seconds, would you like for your sessions? ");
         _mb_duration = Int32.Parse(Console.ReadLine());
+        Console.Clear();
         Console.WriteLine("Get Ready!!");
         ShowLoadingAnimation();
     }   
@@ -64,5 +65,11 @@ class Activity{
         Console.WriteLine($"You have completed another {_mb_duration} seconds of the {_mb_name} Activity.\n");
     }
     
+    public void CountDown(int time){
+        for (int i = time; i >= 0; i -= 1000){
+            Console.Write($"{i/1000}  ");
+            Thread.Sleep(1000);
+        }
+    }
     
 }

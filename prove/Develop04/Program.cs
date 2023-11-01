@@ -23,11 +23,13 @@ class Program
         // Activity activity = new Activity(mb_chosen_activity, mb_chosen_description);
         if (mb_choice == 1){
             Breathing breath = new Breathing(mb_chosen_activity, mb_chosen_description);
-            breath.startActivity();
-            breath.EndActivity();
+            breath.breathStartActivity();
+            breath.breathEndActivity();
         }if (mb_choice == 2){
             Reflecting reflect = new Reflecting(mb_chosen_activity, mb_chosen_description);
-            reflect.startActivity();
+            reflect.reflectStartActivity();
+            reflect.displayQuestion();
+            reflect.reflectEndActivity();
         }
             
     }

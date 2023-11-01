@@ -1,6 +1,7 @@
 using System;
 
 
+
 class Reflecting:Activity{
     private List<string> _mb_reflect;
 
@@ -23,7 +24,7 @@ class Reflecting:Activity{
 
     }
 
-    public void startActivity(){
+    public void reflectStartActivity(){
 
         base.startActivity();
         string mb_prompt = base.getPrompt();
@@ -31,13 +32,54 @@ class Reflecting:Activity{
 
         Console.WriteLine("  ---"+mb_prompt+"---");
 
-        Random rnd = new Random();
-        int index = rnd.Next(_mb_reflect.Count-1);
-        string mb_randomPrompt = _mb_reflect[index];
+        Console.WriteLine("When you have something in mind, press enter to continue.");
+        ConsoleKeyInfo keyInfo;
+        do{
+            keyInfo = Console.ReadKey(true);
+            if(keyInfo.Key == ConsoleKey.Enter){
+                break;
+            }
+        } while (true);
 
-        Console.WriteLine(mb_randomPrompt);
+        Console.WriteLine("Now ponder on each of the following questions as they related to the experience.");
+        Console.Write("You may beign in 5 seconds.");
+        Thread.Sleep(5000);
+        
 
 
+    }
 
+    public void displayQuestion(){
+        Console.Clear();
+
+
+        int mb_time = base.getDuration();
+        while(mb_time > 0){
+
+            int mb_questionTime = Math.Min(10, mb_time);
+
+            Random rnd = new Random();
+            int index = rnd.Next(_mb_reflect.Count-1);
+            string mb_randomPrompt = _mb_reflect[index];
+
+            Console.WriteLine(mb_randomPrompt);
+           
+            // Adding a "Loading" animation using periods (dots)
+            for (int i = 0; i < mb_questionTime; i++)  // Displaying 5 dots
+            {
+                Console.Write(".");
+                Thread.Sleep(1000);  // Pauses for 1000 milliseconds
+            }
+            Console.Write("\n");  // Move to the next line
+    
+
+            mb_time -= mb_questionTime;
+        }
+
+        
+    }
+
+    public void reflectEndActivity(){
+        base.EndActivity();
     }
 }

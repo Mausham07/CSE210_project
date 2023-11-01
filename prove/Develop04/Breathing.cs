@@ -7,7 +7,7 @@ class Breathing : Activity {
     {
 
     }
-    public void startActivity(){
+    public void breathStartActivity(){
         base.startActivity();
 
         Random rnd = new Random();
@@ -21,34 +21,29 @@ class Breathing : Activity {
                 // Breathe in
                 mb_totalTime -= mb_breathIn;
                 Console.Write("\nBreathe in...");
-                CountDown(mb_breathIn);
+                base.CountDown(mb_breathIn);
 
                 // Breathe out
                 mb_totalTime -= mb_breathOut;
                 Console.Write("\nBreathe out...");
-                CountDown(mb_breathOut);
+                base.CountDown(mb_breathOut);
             }
             else{
                 int mb_new_time = mb_totalTime / 2;
                 Console.Write("\nBreathe in...");
-                CountDown(mb_breathIn);
+                base.CountDown(mb_breathIn);
 
                 Console.Write("\nBreathe out...");
-                CountDown(mb_breathOut);
+                base.CountDown(mb_breathOut);
                 mb_totalTime = 0;
                }
         }
         
     }
 
-    public void EndActivity(){
+    public void breathEndActivity(){
         base.EndActivity();
     }
-    public void CountDown(int time){
-        for (int i = time; i >= 0; i -= 1000){
-            Console.Write($"{i/1000}  ");
-            Thread.Sleep(1000);
-        }
-    }
+    
 
 }
