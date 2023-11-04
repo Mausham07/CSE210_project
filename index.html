@@ -26,6 +26,16 @@ a {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: large;
 }
+.focus{
+    font-weight: bold; /* Make it bold */
+    background-color: yellow; /* Bright background color */
+    color: #0055aa; /* Already using the hover color for consistency */
+    border: 2px solid black;
+}
+.focus:hover {
+    color: black; /* Revert to black on hover for contrast */
+    background-color: #ffcc00; /* A darker shade of yellow for hover */
+}
 
 /* Change link color when hovered */
 a:hover {
@@ -42,5 +52,6 @@ body {
 <body>
     <a href="https://github.com/Mausham07/CSE210_project/tree/main/prove/Develop02">Prove 2</a>
     <a href="https://github.com/Mausham07/CSE210_project/tree/main/prove/Develop03">Prove 3</a>
+    <a href="https://github.com/Mausham07/CSE210_project/tree/main/prove/Develop04" class="focus">Prove 4</a>
 </body>
 </html>
