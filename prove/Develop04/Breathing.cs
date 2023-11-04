@@ -20,21 +20,23 @@ class Breathing : Activity {
             {
                 // Breathe in
                 mb_totalTime -= mb_breathIn;
-                Console.Write("\nBreathe in...");
+                Console.Write("\n\nBreathe in...");
                 base.CountDown(mb_breathIn);
 
                 // Breathe out
                 mb_totalTime -= mb_breathOut;
                 Console.Write("\nBreathe out...");
                 base.CountDown(mb_breathOut);
+                Console.WriteLine();
             }
             else{
                 int mb_new_time = mb_totalTime / 2;
-                Console.Write("\nBreathe in...");
+                Console.Write("\n\nBreathe in...");
                 base.CountDown(mb_breathIn);
 
-                Console.Write("\nBreathe out...");
+                Console.Write("\n\nBreathe out...");
                 base.CountDown(mb_breathOut);
+                Console.WriteLine();
                 mb_totalTime = 0;
                }
         }
@@ -44,6 +46,8 @@ class Breathing : Activity {
     public void breathEndActivity(){
         base.EndActivity();
     }
+    
+
     
 
 }

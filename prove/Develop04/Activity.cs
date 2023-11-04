@@ -28,18 +28,20 @@ class Activity{
 
     public void ShowLoadingAnimation()
     {
-        // Adding a "Loading" animation using periods (dots)
-        for (int i = 0; i < 5; i++)  // Displaying 5 dots
-        {
-            Console.Write(".");
-            Thread.Sleep(800);  // Pauses for 800 milliseconds
-        }
-        Console.Write("\n");  // Move to the next line
+       char[] spinner = { '|', '/', '-', '\\' };
+            
+            for (int i = 0; i < 20; i++)  // 20 iterations of spinning
+            {
+                Console.Write(spinner[i % 4]);
+                Thread.Sleep(300);  // Pause for 800 milliseconds
+                Console.Write('\b');  // Move cursor back
+            }
+
     }
 
     public void startActivity(){
+        Console.Clear();
         Console.WriteLine($"\nWelcome to the {_mb_name} activity.\n");
-        ShowLoadingAnimation();
         Console.WriteLine(_mb_description);
         Console.Write("\nHow long, in seconds, would you like for your sessions? ");
         _mb_duration = Int32.Parse(Console.ReadLine());
@@ -53,9 +55,11 @@ class Activity{
     }
 
     public string getPrompt(){
+       
         Random rnd = new Random();
         int index = rnd.Next(_prompts.Count-1);
         string mb_randomPrompt = _prompts[index];
+
         return mb_randomPrompt;
     }
 
@@ -63,10 +67,11 @@ class Activity{
         Console.WriteLine($"\nWell done!!!");
         ShowLoadingAnimation();
         Console.WriteLine($"You have completed another {_mb_duration} seconds of the {_mb_name} Activity.\n");
+        ShowLoadingAnimation();
     }
     
     public void CountDown(int time){
-        for (int i = time; i >= 0; i -= 1000){
+        for (int i = time; i > 0; i -= 1000){
             Console.Write($"{i/1000}  ");
             Thread.Sleep(1000);
         }

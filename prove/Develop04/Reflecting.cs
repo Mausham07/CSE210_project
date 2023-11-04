@@ -28,9 +28,9 @@ class Reflecting:Activity{
 
         base.startActivity();
         string mb_prompt = base.getPrompt();
-        Console.WriteLine("Consider the following prompt:");
+        Console.WriteLine("Consider the following prompt:\n");
 
-        Console.WriteLine("  ---"+mb_prompt+"---");
+        Console.WriteLine("  ---"+mb_prompt+"---\n");
 
         Console.WriteLine("When you have something in mind, press enter to continue.");
         ConsoleKeyInfo keyInfo;
@@ -41,9 +41,9 @@ class Reflecting:Activity{
             }
         } while (true);
 
-        Console.WriteLine("Now ponder on each of the following questions as they related to the experience.");
-        Console.Write("You may beign in 5 seconds.");
-        Thread.Sleep(5000);
+        Console.WriteLine("\nNow ponder on each of the following questions as they related to the experience.");
+        Console.Write("You may beign in few seconds.");
+        base.ShowLoadingAnimation();
         
 
 
@@ -54,7 +54,8 @@ class Reflecting:Activity{
 
 
         int mb_time = base.getDuration();
-        while(mb_time > 0){
+
+        while(mb_time > 0 ){
 
             int mb_questionTime = Math.Min(10, mb_time);
 
@@ -62,7 +63,7 @@ class Reflecting:Activity{
             int index = rnd.Next(_mb_reflect.Count-1);
             string mb_randomPrompt = _mb_reflect[index];
 
-            Console.WriteLine(mb_randomPrompt);
+            Console.Write(mb_randomPrompt);
            
             // Adding a "Loading" animation using periods (dots)
             for (int i = 0; i < mb_questionTime; i++)  // Displaying 5 dots
@@ -72,7 +73,6 @@ class Reflecting:Activity{
             }
             Console.Write("\n");  // Move to the next line
     
-
             mb_time -= mb_questionTime;
         }
 
