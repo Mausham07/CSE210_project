@@ -3,7 +3,7 @@
 class Goal
 {
     
-    public bool _mb_isCompleted;
+    public bool _mb_isCompleted = false;
     private string _mb_name;
     private string _mb_description;
     private int _mb_point;
@@ -12,7 +12,7 @@ class Goal
         _mb_name = name;
         _mb_point = points;
         _mb_description = description;
-        _mb_isCompleted = false;
+
     }
 
     public string getName(){
@@ -25,6 +25,10 @@ class Goal
 
     public int getPoints(){
         return _mb_point;
+    }
+
+    public bool getComplete(){
+        return _mb_isCompleted;
     }
     public virtual void List(int i){
 

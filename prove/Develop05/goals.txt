@@ -1,0 +1,3 @@
+SimpleGoal,Give a talk,Speak in Sacrament ,100,True
+EternalGoal,Study the Scripture,Study for at Least 10 minutes,50,False
+CheckListGoal,Attend the Temple,Attend and Perform any ordiance,50,False, 2, 500, 3

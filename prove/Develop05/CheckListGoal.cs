@@ -15,12 +15,29 @@ class CheckListGoal : Goal
             
             Console.WriteLine($"{i}. [X] {base.getName()} ({base.getDescription()}) -- Currently Completed: {_mb_currentGoal}/{_mb_bonus}");
 
-            Console.WriteLine($"You have {base.getPoints()} points.");
         }
 
         else{
             
             Console.WriteLine($"{i}. [ ] {base.getName()} ({base.getDescription()}) -- Currently Completed: {_mb_currentGoal}/{_mb_bonus}");
+        }
+    }
+
+    public override int Complete()
+    {
+        if(_mb_isCompleted == false){
+            _mb_currentGoal += 1;
+            if (_mb_currentGoal == _mb_bonus){
+                _mb_isCompleted = true;
+                return base.getPoints() + _mb_bonusPoint;
+                
+            }
+            else{
+                return base.getPoints();
+            }
+        }
+        else{
+            return 0;
         }
     }
     public override string SaveFile()

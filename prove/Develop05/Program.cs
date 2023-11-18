@@ -7,10 +7,9 @@ class Program
     static void Main(string[] args)
     {   
 
-        List<string> mb_user_activity = new List<string> {"Simple Goal", "Eternal Goal", "Checklist Goal"};
 
         bool mb_is_on = true;
-        int mb_points = 0;
+        int mb_total_points = 0;
         List<Goal> goals = new List<Goal>();
 
         Save save = new Save();
@@ -19,7 +18,7 @@ class Program
         while(mb_is_on)
         {
              // Console.Clear();
-            Console.WriteLine($"You have {mb_points} points.\n");
+            Console.WriteLine($"\nYou have {mb_total_points} points.\n");
             Console.WriteLine("Menu Options: ");
             Console.WriteLine("  1. Create New Goal");
             Console.WriteLine("  2. List Goals");
@@ -113,7 +112,9 @@ class Program
 
                 Console.Write("Which goal did you accomplish? ");
                 string mb_goal_choice = Console.ReadLine();
-                
+                mb_total_points += goals[int.Parse(mb_goal_choice)-1].Complete();
+                Console.WriteLine($"Cogratulations. You now have {mb_total_points} points.");
+
             }
 
             else if(mb_choice == 6){

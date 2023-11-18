@@ -11,7 +11,6 @@ class SimpleGoal : Goal
             
             Console.WriteLine($"{i}. [X] {base.getName()} ({base.getDescription()})");
 
-            Console.WriteLine($"You have {base.getPoints()} points.");
         }
 
         else{
