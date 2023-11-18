@@ -118,6 +118,16 @@ class Program
             }
 
             else if(mb_choice == 6){
+                Console.WriteLine("Do you want us to remind you for task? (Yes/No)");
+                string mb_remind = Console.ReadLine().ToLower();
+                if (mb_remind =="no"){
+                    Console.WriteLine("Thank You see you again!");
+                }
+                else{
+                    Console.WriteLine("When do you want us to remind?(DD/MM)");
+                    string mb_time = Console.ReadLine();
+                    Console.WriteLine($"Thank you. We will remind you {mb_time}. Have a great time.");
+                }
                 mb_is_on = false;
             }
         }
