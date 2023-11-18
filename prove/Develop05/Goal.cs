@@ -1,28 +1,44 @@
+using System.Runtime.CompilerServices;
+
 class Goal
 {
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public int Points { get; protected set; }
-    public bool IsCompleted { get; protected set; }
+    
+    public bool _mb_isCompleted;
+    private string _mb_name;
+    private string _mb_description;
+    private int _mb_point;
 
-    public Goal(string name, string description)
-    {
-        Name = name;
-        Description = description;
-        Points = 0;
-        IsCompleted = false;
+    public Goal(string name, string description, int points){
+        _mb_name = name;
+        _mb_point = points;
+        _mb_description = description;
+        _mb_isCompleted = false;
     }
 
-    public virtual void MarkComplete()
-    {
-        IsCompleted = true;
+    public string getName(){
+        return _mb_name;
     }
 
-    public virtual void Display()
-    {
-        Console.WriteLine($"Goal: {Name}");
-        Console.WriteLine($"Description: {Description}");
-        Console.WriteLine($"Points: {Points}");
-        Console.WriteLine($"Completed: {(IsCompleted ? "Yes" : "No")}");
+    public string getDescription(){
+        return _mb_description;
     }
+
+    public int getPoints(){
+        return _mb_point;
+    }
+    public virtual void List(int i){
+
+    }
+    public virtual int Complete(){
+        if(_mb_isCompleted == false){
+            _mb_isCompleted = true;
+            return _mb_point;
+        }
+        else{
+            return 0;
+        }
+    }
+
+
+    
 }

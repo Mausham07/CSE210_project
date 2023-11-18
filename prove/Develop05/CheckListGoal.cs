@@ -1,29 +1,26 @@
-class ChecklistGoal : Goal
+class CheckListGoal : Goal
 {
-    private int completionCount;
-    private int completionTarget;
-
-    public ChecklistGoal(string name, string description, int points, int target) : base(name, description)
+    private int _mb_currentGoal;
+    private int _mb_bonus;
+    private int _mb_bonusPoint;
+    public CheckListGoal(string mb_name, string mb_description, int mb_points, int mb_bonus, int mb_bonus_point) : base(mb_name, mb_description, mb_points)
     {
-        Points = points;
-        completionCount = 0;
-        completionTarget = target;
+        _mb_bonus = mb_bonus;
+        _mb_bonusPoint = mb_bonus_point;
     }
 
-    public override void MarkComplete()
+    public override void List(int i)
     {
-        completionCount++;
-        if (completionCount == completionTarget)
-        {
-            // Bonus points when the checklist is completed
-            Points += 500;
+        if(_mb_isCompleted){
+            
+            Console.WriteLine($"{i}. [X] {base.getName()} ({base.getDescription()}) -- Currently Completed: {_mb_currentGoal}/{_mb_bonus}");
+
+            Console.WriteLine($"You have {base.getPoints()} points.");
         }
-    }
 
-    public override void Display()
-    {
-        base.Display();
-        Console.WriteLine($"Goal Type: Checklist");
-        Console.WriteLine($"Completed {completionCount}/{completionTarget} times");
+        else{
+            
+            Console.WriteLine($"{i}. [ ] {base.getName()} ({base.getDescription()}) -- Currently Completed: {_mb_currentGoal}/{_mb_bonus}");
+        }
     }
 }

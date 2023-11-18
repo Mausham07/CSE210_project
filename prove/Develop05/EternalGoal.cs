@@ -1,19 +1,14 @@
 class EternalGoal : Goal
 {
-    public EternalGoal(string name, string description, int points) : base(name, description)
+    public  EternalGoal(string mb_name, string mb_description, int mb_points) : base(mb_name, mb_description, mb_points)
     {
-        Points = points;
+        
     }
-
-    public override void MarkComplete()
-    {
-        // Eternal goals never complete, but they accumulate points
-        Points += 100;
+    public override void List(int i)
+    { 
+        
+        Console.WriteLine($"{i}. [ ] {base.getName()} ({base.getDescription()})");
+        
     }
-
-    public override void Display()
-    {
-        base.Display();
-        Console.WriteLine("Goal Type: Eternal");
-    }
+    
 }
