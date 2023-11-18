@@ -23,4 +23,9 @@ class CheckListGoal : Goal
             Console.WriteLine($"{i}. [ ] {base.getName()} ({base.getDescription()}) -- Currently Completed: {_mb_currentGoal}/{_mb_bonus}");
         }
     }
+    public override string SaveFile()
+    {
+        
+        return $"CheckListGoal,{base.getName()},{base.getDescription()},{base.getPoints()},{_mb_isCompleted}, {_mb_currentGoal}, {_mb_bonusPoint}, {_mb_bonus}";
+    }
 }

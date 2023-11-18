@@ -20,4 +20,10 @@ class SimpleGoal : Goal
         }
     }
 
+    public override string SaveFile()
+    {
+        
+        return $"SimpleGoal,{base.getName()},{base.getDescription()},{base.getPoints()},{_mb_isCompleted}";
+    }
+
 }

@@ -1,0 +1,3 @@
+SimpleGoal,eat,sleep,10,False
+SimpleGoal,wer,wer,123,False
+SimpleGoal,wer,weewdqdwq,12,False, 0, 2312, 3

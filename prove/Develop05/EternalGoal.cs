@@ -10,5 +10,10 @@ class EternalGoal : Goal
         Console.WriteLine($"{i}. [ ] {base.getName()} ({base.getDescription()})");
         
     }
+    public override string SaveFile()
+    {
+        
+        return $"EternalGoal,{base.getName()},{base.getDescription()},{base.getPoints()},{_mb_isCompleted}";
+    }
     
 }

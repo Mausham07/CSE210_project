@@ -12,6 +12,10 @@ class Program
         bool mb_is_on = true;
         int mb_points = 0;
         List<Goal> goals = new List<Goal>();
+
+        Save save = new Save();
+        Load load = new Load();
+
         while(mb_is_on)
         {
              // Console.Clear();
@@ -92,6 +96,25 @@ class Program
                 }
             }
 
+            else if(mb_choice == 3){
+                save.SaveToFile(goals);
+            }
+            else if(mb_choice == 4){
+                load.LoadFromFile(goals);
+            }
+
+            else if (mb_choice == 5){
+                Console.WriteLine("The goals are: ");
+                int count = 1;
+                foreach(Goal g in goals){
+                    g.List(count);
+                    count += 1;
+                }
+
+                Console.Write("Which goal did you accomplish? ");
+                string mb_goal_choice = Console.ReadLine();
+                
+            }
 
             else if(mb_choice == 6){
                 mb_is_on = false;

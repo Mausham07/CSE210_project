@@ -1,4 +1,4 @@
-using System.Runtime.CompilerServices;
+
 
 class Goal
 {
@@ -28,6 +28,10 @@ class Goal
     }
     public virtual void List(int i){
 
+    }
+
+    public virtual string SaveFile(){
+        return "";
     }
     public virtual int Complete(){
         if(_mb_isCompleted == false){
