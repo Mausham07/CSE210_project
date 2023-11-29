@@ -5,14 +5,14 @@ public class Program
 {
     public static void Main()
     {
-        CurrencyConverter converter = new CurrencyConverter();
-        Bank bank = new Bank();
-        Logger logger = new Logger();
-        CurrencyValidator validator = new CurrencyValidator();
-        CurrencyFormatter formatter = new CurrencyFormatter();
+        CurrencyConverter mo_converter = new CurrencyConverter();
+        Bank mo_bank = new Bank();
+        Logger mo_logger = new Logger();
+        CurrencyValidator mo_validator = new CurrencyValidator();
+        CurrencyFormatter mo_formatter = new CurrencyFormatter();
 
-        CurrencyCalculator calculator = new CurrencyCalculator(converter, bank, logger, validator, formatter);
+        CurrencyCalculator mo_calculator = new CurrencyCalculator(mo_converter, mo_bank, mo_logger, mo_validator, mo_formatter);
 
-        calculator.Run();
+        mo_calculator.Run();
     }
 }

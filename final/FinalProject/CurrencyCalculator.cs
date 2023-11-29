@@ -1,24 +1,24 @@
 public class CurrencyCalculator
 {
-    private readonly CurrencyConverterBase currencyConverter;
-    private readonly Bank bank;
-    private readonly Logger logger;
-    private readonly CurrencyValidator currencyValidator;
-    private readonly CurrencyFormatter currencyFormatter;
+    private readonly CurrencyConverterBase _mo_currencyConverter;
+    private readonly Bank _mo_bank;
+    private readonly Logger _mo_logger;
+    private readonly CurrencyValidator _mo_currencyValidator;
+    private readonly CurrencyFormatter _mo_currencyFormatter;
 
     public CurrencyCalculator(CurrencyConverterBase converter, Bank bank, Logger logger, CurrencyValidator validator, CurrencyFormatter formatter)
     {
-        currencyConverter = converter;
-        this.bank = bank;
-        this.logger = logger;
-        currencyValidator = validator;
-        currencyFormatter = formatter;
+        _mo_currencyConverter = converter;
+        this._mo_bank = bank;
+        this._mo_logger = logger;
+        _mo_currencyValidator = validator;
+        _mo_currencyFormatter = formatter;
     }
 
     public void Run()
     {
-        User user = AuthenticateUser();
-        if (user == null)
+        User mo_user = AuthenticateUser();
+        if (mo_user == null)
         {
             Console.WriteLine("Authentication failed. Exiting...");
             return;
@@ -28,19 +28,19 @@ public class CurrencyCalculator
         Currency toCurrency = GetUserCurrency("Enter the target currency code: ");
         double amount = UserInput.GetAmount();
 
-        if (!currencyValidator.IsValidCurrency(fromCurrency.Code) || !currencyValidator.IsValidCurrency(toCurrency.Code))
+        if (!_mo_currencyValidator.IsValidCurrency(fromCurrency.getCode()) || !_mo_currencyValidator.IsValidCurrency(toCurrency.getCode()))
         {
             Console.WriteLine("Invalid currency codes. Exiting...");
             return;
         }
 
-        double result = currencyConverter.Convert(amount, fromCurrency, toCurrency);
+        double result = _mo_currencyConverter.Convert(amount, fromCurrency, toCurrency);
 
-        Console.WriteLine($"Result: {currencyFormatter.FormatCurrency(result, toCurrency)}");
+        Console.WriteLine($"Result: {_mo_currencyFormatter.FormatCurrency(result, toCurrency)}");
 
-        Transaction transaction = new Transaction(user, fromCurrency, toCurrency, amount, result);
-        bank.AddTransaction(transaction);
-        logger.LogTransaction(transaction);
+        Transaction transaction = new Transaction(mo_user, fromCurrency, toCurrency, amount, result);
+        _mo_bank.AddTransaction(transaction);
+        _mo_logger.LogTransaction(transaction);
     }
 
     private User AuthenticateUser()
@@ -64,16 +64,16 @@ public class CurrencyCalculator
 
     private Currency GetUserCurrency(string prompt)
     {
-        Currency currency;
+        Currency mo_currency;
         do
         {
-            currency = UserInput.GetCurrency(prompt);
-            if (!currencyValidator.IsValidCurrency(currency.Code))
+            mo_currency = UserInput.GetCurrency(prompt);
+            if (!_mo_currencyValidator.IsValidCurrency(mo_currency.getCode()))
             {
                 Console.WriteLine("Invalid currency code. Please enter a valid code.");
             }
-        } while (!currencyValidator.IsValidCurrency(currency.Code));
+        } while (!_mo_currencyValidator.IsValidCurrency(mo_currency.getCode()));
 
-        return currency;
+        return mo_currency;
     }
 }

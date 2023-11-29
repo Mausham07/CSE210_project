@@ -1,10 +1,10 @@
 public class CurrencyConverter : CurrencyConverterBase
 {
-    private Dictionary<string, double> exchangeRates;
+    private Dictionary<string, double> _mo_exchangeRates;
 
     public CurrencyConverter()
     {
-        exchangeRates = new Dictionary<string, double>
+        _mo_exchangeRates = new Dictionary<string, double>
         {
             { "USD-EUR", 0.85 },
             { "USD-JPY", 114.5 },
@@ -16,13 +16,13 @@ public class CurrencyConverter : CurrencyConverterBase
         };
     }
 
-    public override double Convert(double amount, Currency fromCurrency, Currency toCurrency)
+    public override double Convert(double mo_amount, Currency fromCurrency, Currency toCurrency)
     {
-        string key = $"{fromCurrency.Code}-{toCurrency.Code}";
-        if (exchangeRates.ContainsKey(key))
+        string key = $"{fromCurrency.getCode()}-{toCurrency.getCode()}";
+        if (_mo_exchangeRates.ContainsKey(key))
         {
-            double rate = exchangeRates[key];
-            return amount * rate;
+            double mo_rate = _mo_exchangeRates[key];
+            return mo_amount * mo_rate;
         }
         else
         {

@@ -1,23 +1,22 @@
 public class User
 {
-    private string username;
-    private string password;
+    private string _mo_username;
+    private string _mo_password;
 
-    public string Username
-    {
-        get { return username; }
-        set { username = value; }
-    }
-
-    public string Password
-    {
-        get { return password; }
-        set { password = value; }
-    }
+    
 
     public User(string username, string password)
     {
-        Username = username;
-        Password = password;
+        _mo_username = username;
+        _mo_password = password;
+    }
+    public string getUsername()
+    {
+        return _mo_username;
+    }
+
+    public string getPassword()
+    {
+        return _mo_password;
     }
 }
