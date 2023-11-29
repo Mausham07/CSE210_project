@@ -1,9 +1,13 @@
 public class USDCurrency : Currency
 {
-    public bool IsPrimaryReserveCurrency { get; set; }
+    private bool _mo_IsPrimaryReserveCurrency;
 
     public USDCurrency() : base("USD", "US Dollar")
     {
-        IsPrimaryReserveCurrency = true; // Example additional attribute
+        _mo_IsPrimaryReserveCurrency = true; 
+    }
+
+    public bool getReserve(){
+        return _mo_IsPrimaryReserveCurrency;
     }
 }

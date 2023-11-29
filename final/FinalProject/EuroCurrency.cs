@@ -1,9 +1,13 @@
 public class EuroCurrency : Currency
 {
-    public string EuroZone { get; set; }
+    private string _mo_euroZone;
+   
 
     public EuroCurrency() : base("EUR", "Euro")
     {
-        EuroZone = "Eurozone"; // Example additional attribute
+        _mo_euroZone = "Eurozone"; 
     }
+     public string getEuroZone(){
+        return _mo_euroZone;
+     }
 }

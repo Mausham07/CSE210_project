@@ -3,9 +3,9 @@ public class UserInput
     public static double GetAmount()
     {
         Console.Write("Enter the amount: ");
-        if (double.TryParse(Console.ReadLine(), out double amount))
+        if (double.TryParse(Console.ReadLine(), out double mo_amount))
         {
-            return amount;
+            return mo_amount;
         }
         else
         {
@@ -17,11 +17,11 @@ public class UserInput
     public static Currency GetCurrency(string prompt)
     {
         Console.Write(prompt);
-        string code = Console.ReadLine().ToUpper();
-        string name = ""; // You may want to fetch the name from a data source
+        string mo_code = Console.ReadLine().ToUpper();
+        string mo_name = ""; 
 
         // Use polymorphism to create an instance of the appropriate Currency subclass
-        switch (code)
+        switch (mo_code)
         {
             case "USD":
                 return new USDCurrency();
@@ -31,7 +31,7 @@ public class UserInput
                 return new JPYCurrency();
             // Add other cases as needed
             default:
-                return new Currency(code, name);
+                return new Currency(mo_code, mo_name);
         }
     }
 }

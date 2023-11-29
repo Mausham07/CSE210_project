@@ -1,19 +1,19 @@
 public class Bank
 {
-    private List<Transaction> transactions;
+    private List<Transaction> _mo_transactions;
 
     public Bank()
     {
-        transactions = new List<Transaction>();
+        _mo_transactions = new List<Transaction>();
     }
 
     public void AddTransaction(Transaction transaction)
     {
-        transactions.Add(transaction);
+        _mo_transactions.Add(transaction);
     }
 
     public List<Transaction> GetTransactions()
     {
-        return transactions;
+        return _mo_transactions;
     }
 }

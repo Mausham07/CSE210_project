@@ -1,9 +1,12 @@
 public class JPYCurrency : Currency
 {
-    public string Country { get; set; }
+    public string _mo_Country;
 
     public JPYCurrency() : base("JPY", "Japanese Yen")
     {
-        Country = "Japan"; // Example additional attribute
+        _mo_Country = "Japan"; 
+    }
+    public string getCountry(){
+        return _mo_Country;
     }
 }
