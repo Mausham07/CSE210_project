@@ -1,3 +1,4 @@
+// Class for validating currency codes.
 public class CurrencyValidator
 {
     public bool IsValidCurrency(string code)
@@ -10,6 +11,7 @@ public class CurrencyValidator
 // Class for formatting currency values
 public class CurrencyFormatter
 {
+    //A formatted string representing the amount and currency.
     public string FormatCurrency(double amount, Currency currency)
     {
         return $"{amount} {currency.getCode()}";

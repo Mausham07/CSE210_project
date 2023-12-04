@@ -1,5 +1,9 @@
+using System;
+
+// Class providing methods for user input related to currency conversion.
 public class UserInput
 {
+    //   The user-entered amount if it is a valid number; otherwise, 0.0.
     public static double GetAmount()
     {
         Console.Write("\nEnter the amount: ");
@@ -12,11 +16,9 @@ public class UserInput
             Console.WriteLine("\nInvalid input. Please enter a valid number.");
             return 0.0;
         }
-        
     }
     
-    
-
+    //   An instance of the appropriate Currency subclass based on the user-entered code.
     public static Currency GetCurrency(string prompt)
     {
         Console.Write(prompt);
