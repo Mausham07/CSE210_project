@@ -5,22 +5,15 @@ public class Program
 {
     public static void Main()
 
-    {   
+    { 
+        Console.Clear();  
         Console.WriteLine("************************************************************");
-        Console.WriteLine("         Welcome to the MO Currency Converter Bank           ");
-        Console.WriteLine("************************************************************");
+        Console.WriteLine("*        Welcome to the MO Currency Converter Bank         *");
+        Console.WriteLine("************************************************************\n");
 
-        // Prompt for account creation
-        Console.WriteLine("If you don't have an account, please create one to get started.");
-        Console.Write("Enter your desired username: ");
-        string newUsername = Console.ReadLine();
-        Console.Write("Enter your desired password: ");
-        string newPassword = Console.ReadLine();
+        
 
-        // Create a new user account
-        User newUser = new User(newUsername, newPassword);
-
-        Console.WriteLine($"Account created successfully! You can now log in.");
+        
         
         CurrencyConverter mo_converter = new CurrencyConverter();
         Bank mo_bank = new Bank();

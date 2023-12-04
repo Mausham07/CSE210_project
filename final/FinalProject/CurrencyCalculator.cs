@@ -44,15 +44,47 @@ public class CurrencyCalculator
     }
 
     private User AuthenticateUser()
-    {
+    {   
+        // Prompt for account creation
+        Console.WriteLine("Please create account to before starting !!");
+
+        Console.Write("Enter your desired username: ");
+        string newUsername = Console.ReadLine();
+
+        Console.Write("Enter your desired password: ");
+        string newPassword = Console.ReadLine();
+
+        
+        char[] spinner = { '|', '/', '-', '\\' };
+            
+            for (int i = 0; i < 20; i++)  // 20 iterations of spinning
+            {
+                Console.Write(spinner[i % 4]);
+                Thread.Sleep(300);  // Pause for 800 milliseconds
+                Console.Write('\b');  // Move cursor back
+            }
+
+    
+        
         // Simplified authentication logic; replace with your authentication mechanism
-        Console.Write("Enter your username: ");
+        Console.Clear();
+        Console.WriteLine("\nAccount created successfully! Please login to get started!!!!");
+        Console.Write("\nEnter your username: ");
         string username = Console.ReadLine();
         Console.Write("Enter your password: ");
         string password = Console.ReadLine();
 
+        
+            
+        for (int i = 0; i < 20; i++)  // 20 iterations of spinning
+        {
+            Console.Write(spinner[i % 4]);
+            Thread.Sleep(300);  // Pause for 800 milliseconds
+            Console.Write('\b');  // Move cursor back
+        }
+
         // Validate username and password (replace this with actual validation logic)
-        if (username == "user" && password == "password")
+        if (username == newUsername && password == newPassword)
         {
             return new User(username, password);
         }
