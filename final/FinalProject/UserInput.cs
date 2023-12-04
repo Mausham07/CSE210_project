@@ -2,17 +2,20 @@ public class UserInput
 {
     public static double GetAmount()
     {
-        Console.Write("Enter the amount: ");
+        Console.Write("\nEnter the amount: ");
         if (double.TryParse(Console.ReadLine(), out double mo_amount))
         {
             return mo_amount;
         }
         else
         {
-            Console.WriteLine("Invalid input. Please enter a valid number.");
+            Console.WriteLine("\nInvalid input. Please enter a valid number.");
             return 0.0;
         }
+        
     }
+    
+    
 
     public static Currency GetCurrency(string prompt)
     {

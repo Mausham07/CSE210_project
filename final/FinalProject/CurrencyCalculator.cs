@@ -5,6 +5,7 @@ public class CurrencyCalculator
     private readonly Logger _mo_logger;
     private readonly CurrencyValidator _mo_currencyValidator;
     private readonly CurrencyFormatter _mo_currencyFormatter;
+    private readonly Spinner _mo_spinner;
 
     public CurrencyCalculator(CurrencyConverterBase converter, Bank bank, Logger logger, CurrencyValidator validator, CurrencyFormatter formatter)
     {
@@ -13,6 +14,7 @@ public class CurrencyCalculator
         this._mo_logger = logger;
         _mo_currencyValidator = validator;
         _mo_currencyFormatter = formatter;
+        _mo_spinner = new Spinner(new char[] { '|', '/', '-', '\\' }, 20, 300);
     }
 
     public void Run()
@@ -24,19 +26,22 @@ public class CurrencyCalculator
             return;
         }
 
-        Currency fromCurrency = GetUserCurrency("Enter the source currency code: ");
+        Currency fromCurrency = GetUserCurrency("\nEnter the source currency code: ");
         Currency toCurrency = GetUserCurrency("Enter the target currency code: ");
         double amount = UserInput.GetAmount();
 
         if (!_mo_currencyValidator.IsValidCurrency(fromCurrency.getCode()) || !_mo_currencyValidator.IsValidCurrency(toCurrency.getCode()))
         {
-            Console.WriteLine("Invalid currency codes. Exiting...");
+            Console.WriteLine("\nInvalid currency codes. Exiting...");
             return;
         }
 
         double result = _mo_currencyConverter.Convert(amount, fromCurrency, toCurrency);
+        _mo_spinner.Spin();
 
         Console.WriteLine($"Result: {_mo_currencyFormatter.FormatCurrency(result, toCurrency)}");
+            
+        _mo_spinner.Spin();
 
         Transaction transaction = new Transaction(mo_user, fromCurrency, toCurrency, amount, result);
         _mo_bank.AddTransaction(transaction);
@@ -55,14 +60,7 @@ public class CurrencyCalculator
         string newPassword = Console.ReadLine();
 
         
-        char[] spinner = { '|', '/', '-', '\\' };
-            
-            for (int i = 0; i < 20; i++)  // 20 iterations of spinning
-            {
-                Console.Write(spinner[i % 4]);
-                Thread.Sleep(300);  // Pause for 800 milliseconds
-                Console.Write('\b');  // Move cursor back
-            }
+        _mo_spinner.Spin();
 
     
         
@@ -76,12 +74,7 @@ public class CurrencyCalculator
 
         
             
-        for (int i = 0; i < 20; i++)  // 20 iterations of spinning
-        {
-            Console.Write(spinner[i % 4]);
-            Thread.Sleep(300);  // Pause for 800 milliseconds
-            Console.Write('\b');  // Move cursor back
-        }
+        _mo_spinner.Spin();
 
         // Validate username and password (replace this with actual validation logic)
         if (username == newUsername && password == newPassword)
