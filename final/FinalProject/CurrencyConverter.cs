@@ -10,11 +10,27 @@ public class CurrencyConverter : CurrencyConverterBase
         _mo_exchangeRates = new Dictionary<string, double>
         {
             { "USD-EUR", 0.85 },   // Exchange rate from US Dollar to Euro
-            { "USD-JPY", 114.5 },  // Exchange rate from US Dollar to Japanese Yen
+            { "USD-JPY", 114.5 }, 
+            {"USD-NPR", 133.48},
+            {"USD-DNR", 0.31 }, // Exchange rate from US Dollar to Japanese Yen
             { "EUR-USD", 1.18 },   // Exchange rate from Euro to US Dollar
-            { "EUR-JPY", 134.5 },  // Exchange rate from Euro to Japanese Yen
+            { "EUR-JPY", 134.5 },
+            {"EUR-NPR", 145.099},
+            {"EUR-DNR", 0.33},  // Exchange rate from Euro to Japanese Yen
             { "JPY-USD", 0.0087 }, // Exchange rate from Japanese Yen to US Dollar
-            { "JPY-EUR", 0.0074 }  // Exchange rate from Japanese Yen to Euro
+            { "JPY-EUR", 0.0074 },
+            {"JPY-NPR", 0.91012},
+            {"JPY-DNR", 0.0021},
+            {"NPR-USD", 0.0075 },
+            {"NPR-EUR",0.006890},
+            {"NPR-JPY",1.09967 },
+            {"NPR-DNR", 0.0023},
+            {"DNR-USD",3.24 },
+            {"DNR-EUR",2.99},
+            {"DNR-JPY",0.0021 },
+            {"DNR-NPR", 0.0023 }
+
+              // Exchange rate from Japanese Yen to Euro
             // Add more exchange rates as needed
         };
     }
