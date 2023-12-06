@@ -27,8 +27,8 @@ public class CurrencyConverter : CurrencyConverterBase
             {"NPR-DNR", 0.0023},
             {"DNR-USD",3.24 },
             {"DNR-EUR",2.99},
-            {"DNR-JPY",0.0021 },
-            {"DNR-NPR", 0.0023 }
+            {"DNR-JPY",477.16 },
+            {"DNR-NPR", 432.19  }
 
               // Exchange rate from Japanese Yen to Euro
             // Add more exchange rates as needed
