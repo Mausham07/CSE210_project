@@ -45,7 +45,7 @@ public class CurrencyCalculator
         Console.WriteLine("-------------------------------------------------------------------------------------------------");
         Console.WriteLine("----                                          WE CONVERT                                     ----");
         Console.WriteLine("-----|US Dollar (USD)|EURO (EUR)|JAPANESE YEN (JPY)|Nepalese Rupee (NPR)|Kuwait Dinar (DNR)|-----");
-        Console.WriteLine("-----------------------------------------------------------------------------------------------\n");
+        Console.WriteLine("-------------------------------------------------------------------------------------------------\n");
 
         // Get source and target currencies, and amount from the user
         Currency fromCurrency = GetUserCurrency("\nEnter the source currency code: ");
